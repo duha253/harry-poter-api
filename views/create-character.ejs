@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="">
+<body>
+    <header>
+        <%- include('./layout/nav.ejs') %>
+    </header>
+
+    <main>
+        <% characters.forEach( character=> { %>
+            <section>
+    <form action="/character/create"></form>
+                <input type="text" name="name" ">
+                    <input type=" text" name="house" ">
+                    <input type=" text" name="patronus" ">
+                    <select name="status">
+                        
+                                <option value="f">Dead</option>
+                                <option value="t">Alive</option>
+                               
+                    </select>
+                <input type="submit" value="update character Info">
+
+            </section>
+            <input type="submit" value="create character">
+        </form>
+            <% }) %>
+    </main>
+</body>
+
+</html>

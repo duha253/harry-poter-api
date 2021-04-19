@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <header>
+        <%- include('./layout/nav.ejs') %>
+    </header>
+
+    <main>
+        <% characters.forEach( character=> { %>
+            <section>
+                <p>
+                    <%= character.name %>
+                </p>
+                <p>
+                    <%= character.house %>
+                </p>
+                <p>
+                    <%= character.patronus %>
+                </p>
+                <p>
+                    <%= character.alive %>
+                </p>
+                <form action="/favorite-character" method="post">
+                <input type="hidden" name="name" value="<%= character.name %>">
+                <input type="hidden" name="house" value="<%= character.house %>">
+                <input type="hidden" name="patronus" value="<%= character.patronus %>">
+                <input type="hidden" name="alive" value="<%= character.alive %>">
+                <input type="submit" value="favorite character">
+            </form>
+            </section>
+            <% }) %>
+    </main>
+</body>
+
+</html>
